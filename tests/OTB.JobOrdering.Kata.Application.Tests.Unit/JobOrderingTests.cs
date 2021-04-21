@@ -41,8 +41,6 @@ namespace OTB.JobOrdering.Kata.Application.Tests.Unit
         }
 
 
-
-
         [Fact]
         public void Test_When_Multiple_jobs_with_dependency_use_dependency_first()
         {
@@ -87,6 +85,16 @@ namespace OTB.JobOrdering.Kata.Application.Tests.Unit
                 "e =>\n" +
                 "f => b";
             Assert.Throws<InvalidOperationException>(() => _jobOrderService.OrderJobs(JOBS));
+        }
+
+        [Theory]
+        [InlineData("a ==\n b @@\n c =>")]
+        [InlineData("b <<\n c >>\n d =>")]
+        [InlineData("d &\n e &\n f =>")]
+        [InlineData("c *\n b *\n a =>")]
+        public void Test_When_Invalid_Seperation_Operator_Supplied(string jobIds)
+        {
+            Assert.Throws<InvalidOperationException>(() => _jobOrderService.OrderJobs(jobIds));
         }
     }
 }
