@@ -92,3 +92,17 @@ f => b
 ```
 
 The result should be an error stating that jobs can’t have circular dependencies.
+
+
+
+
+<br>
+
+FinalResults
+==============
+
+![image](https://user-images.githubusercontent.com/8701702/115534688-f0dd7380-a28f-11eb-8ab3-6f5f66f22f93.png)
+
+![image](https://user-images.githubusercontent.com/8701702/115535034-4a45a280-a290-11eb-8ef8-824d500e1a07.png)
+
+![image](https://user-images.githubusercontent.com/8701702/115535270-7eb95e80-a290-11eb-8bd1-db5c20a6b688.png)
