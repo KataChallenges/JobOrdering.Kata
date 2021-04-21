@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTB.JobOrdering.Kata.App", "src\OTB.JobOrdering.Kata.App\OTB.JobOrdering.Kata.App.csproj", "{91A6FBEE-7B63-4D30-9DBD-97CACF80D1D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A03161DF-A9E7-4270-BACC-534A0529081B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{03DBFAB1-FEC1-4463-81BE-72270D9826EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTB.JobOrdering.Kata.Application", "src\OTB.JobOrdering.Kata.Application\OTB.JobOrdering.Kata.Application.csproj", "{C181054B-D3E2-43C0-94A4-784755EEDA24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTB.JobOrdering.Kata.Domain", "src\OTB.JobOrdering.Kata.Domain\OTB.JobOrdering.Kata.Domain.csproj", "{0E259E77-0984-4BE7-BEDD-3FBD2841AF32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTB.JobOrdering.Kata.Infrastructure", "src\OTB.JobOrdering.Kata.Infrastructure\OTB.JobOrdering.Kata.Infrastructure.csproj", "{177EF72C-E866-42F2-B00B-F15E3E26E820}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTB.JobOrdering.Kata.Application.Tests.Unit", "tests\OTB.JobOrdering.Kata.Application.Tests.Unit\OTB.JobOrdering.Kata.Application.Tests.Unit.csproj", "{958DE642-9877-4CCE-B3C2-8DB32F5A0719}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTB.JobOrdering.Kata.Infrastructure.Tests.Unit", "tests\OTB.JobOrdering.Kata.Infrastructure.Tests.Unit\OTB.JobOrdering.Kata.Infrastructure.Tests.Unit.csproj", "{C2AC2316-6169-43DF-A65D-78F8420B4297}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91A6FBEE-7B63-4D30-9DBD-97CACF80D1D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A6FBEE-7B63-4D30-9DBD-97CACF80D1D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A6FBEE-7B63-4D30-9DBD-97CACF80D1D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A6FBEE-7B63-4D30-9DBD-97CACF80D1D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C181054B-D3E2-43C0-94A4-784755EEDA24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C181054B-D3E2-43C0-94A4-784755EEDA24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C181054B-D3E2-43C0-94A4-784755EEDA24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C181054B-D3E2-43C0-94A4-784755EEDA24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E259E77-0984-4BE7-BEDD-3FBD2841AF32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E259E77-0984-4BE7-BEDD-3FBD2841AF32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E259E77-0984-4BE7-BEDD-3FBD2841AF32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E259E77-0984-4BE7-BEDD-3FBD2841AF32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{177EF72C-E866-42F2-B00B-F15E3E26E820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{177EF72C-E866-42F2-B00B-F15E3E26E820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{177EF72C-E866-42F2-B00B-F15E3E26E820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{177EF72C-E866-42F2-B00B-F15E3E26E820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{958DE642-9877-4CCE-B3C2-8DB32F5A0719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{958DE642-9877-4CCE-B3C2-8DB32F5A0719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{958DE642-9877-4CCE-B3C2-8DB32F5A0719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{958DE642-9877-4CCE-B3C2-8DB32F5A0719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2AC2316-6169-43DF-A65D-78F8420B4297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2AC2316-6169-43DF-A65D-78F8420B4297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2AC2316-6169-43DF-A65D-78F8420B4297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2AC2316-6169-43DF-A65D-78F8420B4297}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{91A6FBEE-7B63-4D30-9DBD-97CACF80D1D5} = {A03161DF-A9E7-4270-BACC-534A0529081B}
+		{C181054B-D3E2-43C0-94A4-784755EEDA24} = {A03161DF-A9E7-4270-BACC-534A0529081B}
+		{0E259E77-0984-4BE7-BEDD-3FBD2841AF32} = {A03161DF-A9E7-4270-BACC-534A0529081B}
+		{177EF72C-E866-42F2-B00B-F15E3E26E820} = {A03161DF-A9E7-4270-BACC-534A0529081B}
+		{958DE642-9877-4CCE-B3C2-8DB32F5A0719} = {03DBFAB1-FEC1-4463-81BE-72270D9826EA}
+		{C2AC2316-6169-43DF-A65D-78F8420B4297} = {03DBFAB1-FEC1-4463-81BE-72270D9826EA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2583FD0B-435E-4B95-8D16-E24E90E53D68}
+	EndGlobalSection
+EndGlobal
