@@ -14,25 +14,36 @@ namespace OTB.JobOrdering.Kata.Application.Tests.Unit
 
 
         [Fact]
-        public void Test_no_jobs_supplied_returns_empty()
+        public void Test_when_no_jobs_supplied_Returns_Empty()
         {
             Assert.Equal("", _jobOrderService.OrderJobs(""));
         }
 
-        [Fact]
-        public void Test_single_job_gives_one_output()
+        [Theory]
+        [InlineData("a", "a =>")]
+        [InlineData("b", "b =>")]
+        [InlineData("c", "c =>")]
+        [InlineData("d", "d =>")]
+        public void Test_When_Single_job_gives_one_output(string result, string jobId)
         {
-            Assert.Equal("a", _jobOrderService.OrderJobs("a =>"));
+            Assert.Equal(result, _jobOrderService.OrderJobs(jobId));
         }
 
-        [Fact]
-        public void Test_multiple_jobs_gives_jobs_in_given_order()
+        [Theory]
+        [InlineData("abc", "a =>\n b =>\n c =>")]
+        [InlineData("bcd", "b =>\n c =>\n d =>")]
+        [InlineData("def", "d =>\n e =>\n f =>")]
+        [InlineData("cba", "c =>\n b =>\n a =>")]
+        public void Test_When_Multiple_jobs_gives_jobs_in_given_order(string result, string jobIds)
         {
-            Assert.Equal("abc", _jobOrderService.OrderJobs("a =>\n b =>\n c =>"));
+            Assert.Equal(result, _jobOrderService.OrderJobs(jobIds));
         }
 
+
+
+
         [Fact]
-        public void Test_multiple_jobs_with_dependency_use_dependency_first()
+        public void Test_When_Multiple_jobs_with_dependency_use_dependency_first()
         {
             const string JOBS =
                 "a =>\n" +
@@ -42,7 +53,7 @@ namespace OTB.JobOrdering.Kata.Application.Tests.Unit
         }
 
         [Fact]
-        public void Test_multiple_jobs_with_dependencies_use_dependencies_first()
+        public void Test_When_Multiple_jobs_with_dependencies_use_dependencies_first()
         {
             const string JOBS =
                 "a =>\n" +
@@ -55,17 +66,17 @@ namespace OTB.JobOrdering.Kata.Application.Tests.Unit
         }
 
         [Fact]
-        public void Test_self_referencing_jobs_are_not_allowed()
+        public void Test_When_Self_referencing_jobs_are_not_allowed()
         {
             const string JOBS =
                 "a =>\n" +
                 "b =>\n" +
                 "c => c";
-            Assert.Throws<Exception>(() => _jobOrderService.OrderJobs(JOBS));
+            Assert.Throws<InvalidOperationException>(() => _jobOrderService.OrderJobs(JOBS));
         }
 
         [Fact]
-        public void Test_circular_dependencies_are_not_allowed()
+        public void Test_When_Circular_dependencies_are_not_allowed()
         {
             const string JOBS =
                 "a =>\n" +
@@ -74,7 +85,7 @@ namespace OTB.JobOrdering.Kata.Application.Tests.Unit
                 "d => a\n" +
                 "e =>\n" +
                 "f => b";
-            Assert.Throws<Exception>(() => _jobOrderService.OrderJobs(JOBS));
+            Assert.Throws<InvalidOperationException>(() => _jobOrderService.OrderJobs(JOBS));
         }
     }
 }

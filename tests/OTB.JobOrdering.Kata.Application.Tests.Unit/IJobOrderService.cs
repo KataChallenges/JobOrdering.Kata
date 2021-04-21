@@ -2,8 +2,8 @@
 
 namespace OTB.JobOrdering.Kata.Application.Tests.Unit
 {
-    internal interface IJobOrderService
+    public interface IJobOrderService
     {
-        IEnumerable<char> OrderJobs(string v);
+        string OrderJobs(string jobName);
     }
 }
