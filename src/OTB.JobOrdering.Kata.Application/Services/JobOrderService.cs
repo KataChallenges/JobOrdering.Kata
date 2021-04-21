@@ -1,9 +1,7 @@
 ﻿using OTB.JobOrdering.Kata.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace OTB.JobOrdering.Kata.Application.Services
 {
@@ -12,8 +10,6 @@ namespace OTB.JobOrdering.Kata.Application.Services
         private const string JobSplitString = "=>";
         private readonly IList<char> _jobIds = new List<char>();
         private readonly IDictionary<char, IList<char>> _jobRules = new Dictionary<char, IList<char>>();
-        private readonly ICollection<char> _finishedJobs = new List<char>();
-        private readonly Stack<char> _jobProcessingStack = new Stack<char>();
         private readonly IStringChecker _stringChecker;
         private readonly ISequenceRepository _sequenceRepository;
 
@@ -29,10 +25,14 @@ namespace OTB.JobOrdering.Kata.Application.Services
             {
                 return "";
             }
-            var jobsData =  _stringChecker.SplitToLinesIgnoringEmpty(jobName);
+            var jobsData = _stringChecker.SplitToLinesIgnoringEmpty(jobName);
 
             foreach (var job in jobsData)
             {
+                if (!job.Contains(JobSplitString))
+                    throw new InvalidOperationException($"Invalid job spliter entered: {job}");
+
+
                 var data = job.Split(new[] { JobSplitString }, StringSplitOptions.RemoveEmptyEntries);
                 if (data.Length > 1)
                 {
@@ -55,15 +55,21 @@ namespace OTB.JobOrdering.Kata.Application.Services
         {
             Register(jobId);
             if (_jobRules.ContainsKey(jobId))
+            {
                 _jobRules[jobId].Add(dependsOn);
+            }
             else
+            {
                 _jobRules[jobId] = new List<char> { dependsOn };
+            }
         }
 
         public void Register(char jobId)
         {
             if (!_jobIds.Contains(jobId))
+            {
                 _jobIds.Add(jobId);
+            }
         }
 
     }
