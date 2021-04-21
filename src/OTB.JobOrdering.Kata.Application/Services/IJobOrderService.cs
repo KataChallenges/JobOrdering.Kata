@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace OTB.JobOrdering.Kata.Application.Tests.Unit
+namespace OTB.JobOrdering.Kata.Application.Services
 {
     public interface IJobOrderService
     {

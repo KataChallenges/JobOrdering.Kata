@@ -4,4 +4,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OTB.JobOrdering.Kata.Infrastructure\OTB.JobOrdering.Kata.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
